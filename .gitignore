@@ -1,0 +1,5 @@
+*.swp
+*~
+
+# Non-external dependencies.
+vendor/github.com/katzenpost

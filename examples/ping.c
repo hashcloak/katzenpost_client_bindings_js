@@ -18,11 +18,10 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "../bindings.h"
+#include "client_bindings.h"
 
-int main() {
-  GoString f = {"./ping.toml", 11};
-  LoadConfig(f);
+int main(int argc, char *argv[]) {
+  LoadConfig(argv[1]);
   NewClient();
   Start();
 

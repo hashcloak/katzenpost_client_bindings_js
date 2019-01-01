@@ -32,8 +32,8 @@ var myClient *client.Client
 var mySession *session.Session
 
 //export LoadConfig
-func LoadConfig(f string) {
-	c, err := config.LoadFile(f, false)
+func LoadConfig(cfg *C.char) {
+	c, err := config.LoadFile(C.GoString(cfg), false)
 	if err != nil {
 		panic(err)
 	}

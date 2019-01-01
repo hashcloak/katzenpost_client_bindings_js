@@ -21,12 +21,13 @@ And then fetch the pinned dependencies:
 
 We generate our bindings.h and bindings.so files like so:
 ::
-   go build -o bindings.so -buildmode=c-shared bindings.go
+   go build -o client_bindings.so -buildmode=c-shared bindings.go
 
 
 The provided example can then be built with:
 ::
-   gcc ./examples/ping.c ./bindings.so
+   gcc ./examples/ping.c ./client_bindings.so -I . -o cping
+
 
 license
 =======

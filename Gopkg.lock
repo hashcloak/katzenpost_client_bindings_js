@@ -11,7 +11,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:7e22a256490317f5d85b5f3080171c9d351fb6dbb508bf28bdad0e71fa1b626b"
+  digest = "1:3ae08c929a64bad23efa843b41224db11a20ffdb7a3a1b779fceffd1d4f07215"
   name = "git.schwanenlied.me/yawning/bsaes.git"
   packages = [
     ".",
@@ -21,7 +21,7 @@
     "internal/modes",
   ]
   pruneopts = ""
-  revision = "c0276d75487ef7aceab140c9eb31601dd7d18bd4"
+  revision = "26d1add596b6d800bdeeb3bc3b2c7b316c056b6d"
 
 [[projects]]
   branch = "master"
@@ -59,12 +59,12 @@
   revision = "5312a61534124124185d41f09206b9fef1d88403"
 
 [[projects]]
-  digest = "1:b76b9d2ddb94f66bf36a2fd4ddc7656e6eca9c9c214e8e1d75b43ee159ee26bf"
+  digest = "1:8fe1bf6222077787bf88db4eae509f1c910743be1b82e1a6a57444fe092fc4a5"
   name = "github.com/coreos/bbolt"
   packages = ["."]
   pruneopts = ""
-  revision = "7ee3ded59d4835e10f3e7d0f7603c42aa5e83820"
-  version = "v1.3.1-etcd.8"
+  revision = "63597a96ec0ad9e6d43c3fc81e809909e0237461"
+  version = "v1.3.2"
 
 [[projects]]
   digest = "1:22362d4082201b409cda662e321382597f6964e1f3a7976aec613c8f2c98eeba"
@@ -80,7 +80,8 @@
   version = "v0.0.7"
 
 [[projects]]
-  digest = "1:ce980b503ef009299fd52d5a7f574b7130e3467344c4b9df6f72a6fcf24c4658"
+  branch = "master"
+  digest = "1:93f868da647cb8930f5bc04d7fba31e952d68fb878027ff3c93dbeee6869a1d8"
   name = "github.com/katzenpost/client"
   packages = [
     ".",
@@ -88,16 +89,17 @@
     "constants",
     "internal/pkiclient",
     "internal/proxy",
+    "multispool",
     "poisson",
     "session",
     "utils",
   ]
   pruneopts = ""
-  revision = "00d6e94532e89ae2e7d55219d381f96449d5ca9b"
-  version = "0.0.0"
+  revision = "dc3f817a38d5ca007511797cb1f75cb04508d15c"
 
 [[projects]]
-  digest = "1:faad7f9dac6a2d073d9587cbce9b332bdc229235c2b230db93c7c853b5d74735"
+  branch = "master"
+  digest = "1:b044f2d636769c588eace8e9504b8f2b1dd0b13cf21e8f3d318c49f9a6d8d9f4"
   name = "github.com/katzenpost/core"
   packages = [
     "constants",
@@ -119,36 +121,35 @@
     "worker",
   ]
   pruneopts = ""
-  revision = "0213ae4e0d0ee7a53f238e39535430bfeb49cfc2"
-  version = "v0.0.6"
+  revision = "ebf6b0ee65d29ae5361f8882d83da6bd0031a68b"
 
 [[projects]]
-  digest = "1:7a3db252d0c603c78df3be9e773bc6a20d24f41323effe86e1fec2e34483d176"
+  branch = "master"
+  digest = "1:2f6be1cae316ef1b8df291a7fc15960a5a96f83013db5fd7661c29bfef9d7647"
   name = "github.com/katzenpost/minclient"
   packages = ["."]
   pruneopts = ""
-  revision = "fe261fae58ad548ba9ffa559a7138be5d3a2d979"
-  version = "v0.0.4"
+  revision = "01a7c28bfefe7b3e0794f1cbb4dde06fa863f2c0"
 
 [[projects]]
   branch = "master"
-  digest = "1:b047636096ab137a8a4682572a3b7b40b135c2e54fe5c863620b6b314858ffd7"
+  digest = "1:edae6fbfb9e116e12cdaa7d95998bd55acece9e4b9049e90941ffd1d5c24e33c"
   name = "github.com/katzenpost/noise"
   packages = ["."]
   pruneopts = ""
-  revision = "08e83772a9119dc0b35028bc6d8412dc22b0a9ee"
+  revision = "a6bec72d870aedede0aac380c6c55af0866fad74"
 
 [[projects]]
-  digest = "1:2e7f653483e51243b6cd6de60ce39bde0d6927d10a3c24295ab0f82cb1efeae2"
+  digest = "1:2c6f07b1cfb95e87dc50e1b0ea63c8fe884720c315baec76c1da65306ef4f68b"
   name = "github.com/ugorji/go"
   packages = ["codec"]
   pruneopts = ""
-  revision = "b4c50a2b199d93b13dc15e78929cfb23bfdf21ab"
-  version = "v1.1.1"
+  revision = "8fd0f8d918c8f0b52d0af210a812ba882cc31a1e"
+  version = "v1.1.2"
 
 [[projects]]
   branch = "master"
-  digest = "1:887074c37fcefc2f49b5ae9c6f9f36107341aec23185613d0e9f1ee81db7f94a"
+  digest = "1:36ef1d8645934b1744cc7d8726e00d3dd9d8d84c18617bf7367a3a6d532f3370"
   name = "golang.org/x/crypto"
   packages = [
     "blake2b",
@@ -163,11 +164,11 @@
     "sha3",
   ]
   pruneopts = ""
-  revision = "505ab145d0a99da450461ae2c1a9f6cd10d1f447"
+  revision = "a5d413f7728c81fb97d96a2b722368945f651e78"
 
 [[projects]]
   branch = "master"
-  digest = "1:4ab2fc83e3222b69759dfd717e01d0cf38b133aabfacc29a86057021a2f1abd9"
+  digest = "1:1b519e44bd757fb43766a6150cb488a0bcbf1144ffb1dc33c7f2f7cafac9ad4a"
   name = "golang.org/x/net"
   packages = [
     "idna",
@@ -175,18 +176,18 @@
     "proxy",
   ]
   pruneopts = ""
-  revision = "927f97764cc334a6575f4b7a1584a147864d5723"
+  revision = "63eda1eb0650888965ead1296efd04d0b2b61128"
 
 [[projects]]
   branch = "master"
-  digest = "1:e6d1805ead5b8f2439808f76187f54042ed35ee26eb9ca63127259a0e612b119"
+  digest = "1:919aaa36fe27d6fba3bea8067d0dea806269c45c8e5f329713eef4e2637dc2f4"
   name = "golang.org/x/sys"
   packages = [
     "cpu",
     "unix",
   ]
   pruneopts = ""
-  revision = "b4a75ba826a64a70990f11a225237acd6ef35c9f"
+  revision = "f49334f85ddcf0f08d7fb6dd7363e9e6d6b777eb"
 
 [[projects]]
   digest = "1:5acd3512b047305d49e8763eef7ba423901e85d5dd2fd1e71778a0ea8de10bd4"

@@ -7,15 +7,15 @@ required = ["github.com/coreos/bbolt"]
   name = "github.com/coreos/bbolt"
 
 [[override]]
-  version = "0.0.0"
+  branch = "master"
   name = "github.com/katzenpost/client"
 
 [[override]]
-  version = "0.0.6"
+  branch = "master"
   name = "github.com/katzenpost/core"
 
 [[override]]
-  version = "0.0.4"
+  branch = "master"
   name = "github.com/katzenpost/minclient"
 
 # pin deps

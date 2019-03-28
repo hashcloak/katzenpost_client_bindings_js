@@ -64,27 +64,35 @@ func Stop() {
 }
 
 //export QueryAvailableService
-func QueryAvailableService(service *C.char, messagePtr unsafe.Pointer, messageLen C.int) {
+func QueryAvailableService(service *C.char, messagePtr unsafe.Pointer, messageLen C.int) unsafe.Pointer {
 	message := C.GoBytes(messagePtr, messageLen)
 	serviceDesc, err := mySession.GetService(C.GoString(service))
 	if err != nil {
 		panic(err)
 	}
-	msgId, err := mySession.SendUnreliableQuery(serviceDesc.Name, serviceDesc.Provider, message)
+	msgId, err := mySession.SendUnreliableMessage(serviceDesc.Name, serviceDesc.Provider, message)
 	if err != nil {
 		panic(err)
 	}
-	mySession.WaitForReply(msgId)
+	reply, err := mySession.WaitForReply(msgId)
+	if err != nil {
+		panic(err)
+	}
+	return C.CBytes(reply)
 }
 
-//export QueryService
-func QueryService(name, provider *C.char, messagePtr unsafe.Pointer, messageLen C.int) {
+//export SendUnreliableMessage
+func SendUnreliableMessage(name, provider *C.char, messagePtr unsafe.Pointer, messageLen C.int) unsafe.Pointer {
 	message := C.GoBytes(messagePtr, messageLen)
-	msgId, err := mySession.SendUnreliableQuery(C.GoString(name), C.GoString(provider), message)
+	msgId, err := mySession.SendUnreliableMessage(C.GoString(name), C.GoString(provider), message)
 	if err != nil {
 		panic(err)
 	}
-	mySession.WaitForReply(msgId)
+	reply, err := mySession.WaitForReply(msgId)
+	if err != nil {
+		panic(err)
+	}
+	return C.CBytes(reply)
 }
 
 func main() {}

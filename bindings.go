@@ -70,11 +70,7 @@ func QueryAvailableService(service *C.char, messagePtr unsafe.Pointer, messageLe
 	if err != nil {
 		panic(err)
 	}
-	msgId, err := mySession.SendUnreliableMessage(serviceDesc.Name, serviceDesc.Provider, message)
-	if err != nil {
-		panic(err)
-	}
-	reply, err := mySession.WaitForReply(msgId)
+	reply, err := mySession.SendUnreliableMessage(serviceDesc.Name, serviceDesc.Provider, message)
 	if err != nil {
 		panic(err)
 	}
@@ -84,11 +80,7 @@ func QueryAvailableService(service *C.char, messagePtr unsafe.Pointer, messageLe
 //export SendUnreliableMessage
 func SendUnreliableMessage(name, provider *C.char, messagePtr unsafe.Pointer, messageLen C.int) unsafe.Pointer {
 	message := C.GoBytes(messagePtr, messageLen)
-	msgId, err := mySession.SendUnreliableMessage(C.GoString(name), C.GoString(provider), message)
-	if err != nil {
-		panic(err)
-	}
-	reply, err := mySession.WaitForReply(msgId)
+	reply, err := mySession.SendUnreliableMessage(C.GoString(name), C.GoString(provider), message)
 	if err != nil {
 		panic(err)
 	}

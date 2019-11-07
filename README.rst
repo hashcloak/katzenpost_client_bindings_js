@@ -13,11 +13,7 @@ Here we provide C language bindings for the mixnet client library:
 Building
 --------
 
-Firstly, acquire a recent version of dep: https://github.com/golang/dep
-
-And then fetch the pinned dependencies:
-::
-   dep ensure
+Use go-modules to pin dependency versions.
 
 We generate our bindings.h and bindings.so files like so:
 ::

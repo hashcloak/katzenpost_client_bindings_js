@@ -24,12 +24,11 @@ import (
 
 	"github.com/katzenpost/client"
 	"github.com/katzenpost/client/config"
-	"github.com/katzenpost/client/session"
 )
 
 var myConfig *config.Config
 var myClient *client.Client
-var mySession *session.Session
+var mySession *client.Session
 
 //export LoadConfig
 func LoadConfig(cfg *C.char) {

@@ -24,15 +24,18 @@ import (
 
 	"github.com/katzenpost/client"
 	"github.com/katzenpost/client/config"
+	"github.com/katzenpost/core/crypto/ecdh"
+	"github.com/katzenpost/core/crypto/rand"
 )
 
 var myConfig *config.Config
 var myClient *client.Client
 var mySession *client.Session
+var myLinkKey *ecdh.PrivateKey
 
 //export LoadConfig
 func LoadConfig(cfg *C.char) {
-	c, err := config.LoadFile(C.GoString(cfg), false)
+	c, err := config.LoadFile(C.GoString(cfg))
 	if err != nil {
 		panic(err)
 	}
@@ -50,7 +53,12 @@ func NewClient() {
 
 //export Start
 func Start() {
-	s, err := myClient.NewSession()
+	var err error
+	myLinkKey, err = ecdh.NewKeypair(rand.Reader)
+	if err != nil {
+		panic(err)
+	}
+	s, err := myClient.NewSession(myLinkKey)
 	if err != nil {
 		panic(err)
 	}
@@ -69,7 +77,7 @@ func QueryAvailableService(service *C.char, messagePtr unsafe.Pointer, messageLe
 	if err != nil {
 		panic(err)
 	}
-	reply, err := mySession.SendUnreliableMessage(serviceDesc.Name, serviceDesc.Provider, message)
+	reply, err := mySession.BlockingSendUnreliableMessage(serviceDesc.Name, serviceDesc.Provider, message)
 	if err != nil {
 		panic(err)
 	}
@@ -79,7 +87,7 @@ func QueryAvailableService(service *C.char, messagePtr unsafe.Pointer, messageLe
 //export SendUnreliableMessage
 func SendUnreliableMessage(name, provider *C.char, messagePtr unsafe.Pointer, messageLen C.int) unsafe.Pointer {
 	message := C.GoBytes(messagePtr, messageLen)
-	reply, err := mySession.SendUnreliableMessage(C.GoString(name), C.GoString(provider), message)
+	reply, err := mySession.BlockingSendUnreliableMessage(C.GoString(name), C.GoString(provider), message)
 	if err != nil {
 		panic(err)
 	}

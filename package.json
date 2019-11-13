@@ -1,0 +1,9 @@
+{
+  "name": "katzenpost-client-bindings",
+  "version": "0.0.1",
+  "description": "JS bindings for the Katzenpost client",
+  "main": "index.js",
+  "repository": "git@github.com:Mikerah/katzenpost_client_bindings_js.git",
+  "author": "Mikerah <mikerahqc@protonmail.com>",
+  "license": "MIT"
+}

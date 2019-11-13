@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:Mikerah/katzenpost_client_bindings_js.git",
   "author": "Mikerah <mikerahqc@protonmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  }
 }
